@@ -8,7 +8,7 @@ function App() {
     {path:'/', element: <CandidateDetails />},
     {path:'questions', element: <Questions />},
     {path:'questions/:questionId', element: <EachQuestion />},
-    {path:'report', element: <Report />},
+    {path:'/report', element: <Report />},
   ])
   return (
     <div>

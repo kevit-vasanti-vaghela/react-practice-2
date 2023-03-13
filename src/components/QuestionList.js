@@ -7,7 +7,7 @@ const QuestionList = ({ questions }) => {
       <ul>
         {
             questions.map(question => (
-                <li key={question.text}><Link to={question.que_no}>{question.text}</Link></li>
+               <li key={question.text}><Link to={question.que_no}>{question.text}</Link></li>
             ))
         }
       </ul>
