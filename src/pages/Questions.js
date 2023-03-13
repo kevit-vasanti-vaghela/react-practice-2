@@ -30,7 +30,7 @@ const Questions = () => {
         { text: "Props", isCorrect: true },
         { text: "Factory", isCorrect: false },
         { text: "None of the mentioned", isCorrect: false },
-      ],
+      ]
     },
     {
         que_no: '3',
@@ -40,7 +40,7 @@ const Questions = () => {
           { text: "C++", isCorrect: false },
           { text: "JavaScript", isCorrect: true },
           { text: "Java", isCorrect: false },
-        ],
+        ]
       },
       {
         que_no: '4',
@@ -50,7 +50,7 @@ const Questions = () => {
           { text: "1 Element", isCorrect: true },
           { text: "More than 1 element", isCorrect: false },
           { text: " None of the mentioned", isCorrect: false },
-        ],
+        ]
       },
       {
         que_no: '5',
@@ -72,16 +72,16 @@ const Questions = () => {
             text: "install -g create-react-app", 
             isCorrect: false 
         },
-        ],
-      },
+        ]
+      }
   ];
     return (
     <>
       <h1>Question List</h1>
       <QuestionList questions={questions}/>
     </>
-  )
+    )
+ 
 
 }
-
 export default Questions
