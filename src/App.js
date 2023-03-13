@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CandidateDetails from "./pages/CandidateDetails";
 import EachQuestion from "./pages/EachQuestion";
-import QuestionList from "./pages/QuestionList";
+import Questions from "./pages/Questions";
 import Report from "./pages/Report";
 function App() {
   const router = createBrowserRouter([
     {path:'/', element: <CandidateDetails />},
-    {path:'questions', element: <QuestionList />},
+    {path:'questions', element: <Questions />},
     {path:'questions/:questionId', element: <EachQuestion />},
     {path:'report', element: <Report />},
   ])
