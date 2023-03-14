@@ -6,7 +6,7 @@ import PageContent from '../ui/PageContent';
 import classes from './EachQuestion.module.css'
 
 const EachQuestion = () => {
-    const { questions, calculateScore,isActive } = useContext(QuestionsContext)
+    const { questions, calculateScore,isActive, setClicked } = useContext(QuestionsContext)
     
     const params = useParams();
     const navigate = useNavigate();
@@ -34,12 +34,12 @@ const EachQuestion = () => {
             <li 
               className={!isActive ? classes.item : classes.active} 
               key={idx} 
-              onClick={() => calculateScore(op.isCorrect)}>{op.text}</li>
+              onClick={() => calculateScore(op.isCorrect, op.op_no)}>{op.text}</li>
         ))
        }
       </ul>
       <div  className={classes.buttonDiv} style={{display: 'flex', justifyContent: 'space-between', width: '100px'}}>
-        <Link to='..' relative='path'>Back</Link>
+        <Link to='..' relative='path' onClick={()=>setClicked(false)}>Back</Link>
      
         <Link to='/report' >Submit</Link>
       </div>
