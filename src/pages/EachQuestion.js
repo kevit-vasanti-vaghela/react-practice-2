@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import QuestionsContext from '../context/QuestionsContext';
 
 const EachQuestion = () => {
-    const { questions } = useContext(QuestionsContext)
+    const { questions, calculateScore } = useContext(QuestionsContext)
     const params = useParams();
     const navigate = useNavigate();
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,13 +13,13 @@ const EachQuestion = () => {
    
      let id = params.questionId
 
-     const calculateScoreHandler = (isCorrect) => {
-        if(isCorrect) {
-            setScore((prevState) => prevState + 1)
-            console.log('SCORE',score)
-        }
-        navigate(`/questions/${+id+1}`)
-    }
+    //  const calculateScore = (isCorrect) => {
+    //     if(isCorrect) {
+    //         setScore((prevState) => prevState + 1)
+    //         console.log('SCORE',score)
+    //     }
+    //     navigate(`/questions/${+id+1}`)
+    // }
     
   return (
     <div>
@@ -28,14 +28,14 @@ const EachQuestion = () => {
       <ul>
        {
         questions[id-1].options.map((op,idx) => (
-            <li key={idx} onClick={() => calculateScoreHandler(op.isCorrect)}>{op.text}</li>
+            <li key={idx} onClick={() => calculateScore(op.isCorrect)}>{op.text}</li>
         ))
        }
       </ul>
       <div style={{display: 'flex', justifyContent: 'space-between', width: '100px'}}>
         <Link to='..' relative='path'>Back</Link>
      
-        <Link to='/report'>Submit</Link>
+        <Link to='/report' >Submit</Link>
       </div>
      
     </div>

@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import QuestionsContext from '../context/QuestionsContext'
+import { Link } from 'react-router-dom'
 
-const report = () => {
+const Report = () => {
+  const { score, resetScore } = useContext(QuestionsContext)
+  
   return (
     <div>
-      <h1>Report</h1>
+      {score === 5 ? 'Congratualtions' : 'Try Again'}
+      <h1>Result : {score} out of 5</h1>
+      <Link to='/' onClick={resetScore}>Go Back to Home</Link>
     </div>
   )
 }
 
-export default report
+export default Report

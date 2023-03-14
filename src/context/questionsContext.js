@@ -75,15 +75,26 @@ export function QuestionsProvider({ children }) {
       },
       ]
     }])
-   const [score, setScore] = useState();
+   const [score, setScore] = useState(0);
 
-   const calculateScore = () => {
+   const calculateScore = (isCorrect) => {
+        if(isCorrect) {
+            setScore((prevState) => prevState + 1)
+            console.log(score)
+        }
+        // navigate(`/questions/${+id+1}`)
+   }
 
+   const resetScore = () => {
+        setScore(0)
    }
 
    const values = {
+    score,
+    setScore,
     questions,
-    calculateScore
+    calculateScore,
+    resetScore
    }
 
    return (
