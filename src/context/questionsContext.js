@@ -4,6 +4,7 @@ const QuestionsContext = createContext()
 
 export function QuestionsProvider({ children }) {
     const [clicked, setClicked] = useState(false);
+    const [isActive, setIsActive] = useState(true);
   const [questions, setQuestions] = useState([ 
     {
     que_no: '1',
@@ -82,10 +83,12 @@ export function QuestionsProvider({ children }) {
     }])
    const [score, setScore] = useState(0);
    const [currentQuestion, setCurrentQuestion] = useState(0);
-   const calculateScore = (isCorrect,number) => {
+
+   const calculateScore = (isCorrect,number,li_idx) => {
         if(isCorrect && !clicked) {
             setClicked(true)
            console.log('NUM',number)
+           console.log('LI',li_idx)
             setScore((prevState) => prevState + 1)
             if(isCorrect && clicked) {
                 setScore(prevState => prevState)
@@ -105,7 +108,8 @@ export function QuestionsProvider({ children }) {
     questions,
     calculateScore,
     resetScore,
-    setClicked
+    setClicked,
+    isActive
    }
 
    return (

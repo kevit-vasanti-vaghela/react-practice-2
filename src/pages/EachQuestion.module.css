@@ -17,20 +17,25 @@
     border-radius: 10px;
     background-color: #757171;
  }
- .active {
-    text-align: left;
-    color: white;
-    width: 500px;
-    text-decoration: solid;
-    list-style-type: none;
-    border: 1px solid #585454;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #1a1818;
+ /* .item:active, */
+ .item.active,
+ .item:active{
+    /* text-align: left; */
+    color: rgb(15, 14, 14);
+    /* width: 500px; */
+    /* text-decoration: solid; */
+    /* list-style-type: none; */
+    /* border: 1px solid #585454; */
+    /* padding: 10px; */
+    /* border-radius: 10px; */
+    background-color: #faf7f7;
  }
+ 
   .item:hover,
-  .item:focus {
+  .item:focus
+   {
     background-color: #3b3939;
+    transform: scale(1.02);
   }
    .buttonDiv {
     display: flex;

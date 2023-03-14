@@ -23,6 +23,9 @@ const EachQuestion = () => {
     //     }
     //     navigate(`/questions/${+id+1}`)
     // }
+    let highlightedStyles = {
+      
+    }
     
   return (
     <PageContent>
@@ -32,9 +35,9 @@ const EachQuestion = () => {
        {
         questions[id-1].options.map((op,idx) => (
             <li 
-              className={!isActive ? classes.item : classes.active} 
+              className={classes.item} 
               key={idx} 
-              onClick={() => calculateScore(op.isCorrect, op.op_no)}>{op.text}</li>
+              onClick={() => calculateScore(op.isCorrect, op.op_no,idx)}>{op.text}</li>
         ))
        }
       </ul>

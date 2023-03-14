@@ -8,7 +8,7 @@ const Report = () => {
   
   return (
     <PageContent>
-      {score === 5 ? 'Congratualtions' : 'Try Again'}
+      {score === 5 ? <h3 style={{color:'#555'}}>Congratulations</h3> : <h3 style={{color:'#555'}}>Try Again</h3>}
       <h1>Result : {score} out of 5</h1>
       <Link to='/' onClick={resetScore}>Go Back to Home</Link>
     </PageContent>
