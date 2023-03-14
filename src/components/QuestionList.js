@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { questions } from '../context/questionsContext'
+import QuestionsContext from '../context/QuestionsContext'
 
-const QuestionList = ({ questions }) => {
+const QuestionList = () => {
+  const { questions } = useContext(QuestionsContext)
   return (
     <div>
       <ul>

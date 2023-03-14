@@ -3,6 +3,7 @@ import CandidateDetails from "./pages/CandidateDetails";
 import EachQuestion from "./pages/EachQuestion";
 import Questions from "./pages/Questions";
 import Report from "./pages/Report";
+import { QuestionsProvider } from "./context/QuestionsContext";
 function App() {
   const router = createBrowserRouter([
     {path:'/', element: <CandidateDetails />},
@@ -11,10 +12,10 @@ function App() {
     {path:'/report', element: <Report />},
   ])
   return (
-    <div>
+    <QuestionsProvider>
       <h1>MCQ Test</h1>
       <RouterProvider router={router} />
-    </div>
+    </QuestionsProvider>
   );
 }
 
