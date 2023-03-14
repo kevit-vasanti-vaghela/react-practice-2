@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import QuestionList from '../components/QuestionList'
 import QuestionsContext from '../context/QuestionsContext'
+import PageContent from '../ui/PageContent'
 
 const Questions = () => {
     const { questions } = useContext(QuestionsContext)
  
     return (
-    <>
-      <h1>Question List</h1>
+   
+      
       <QuestionList questions={questions}/>
-    </>
     )
  
 

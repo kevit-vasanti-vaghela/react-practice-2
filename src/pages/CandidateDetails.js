@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import PageContent from '../ui/PageContent';
 
 const CandidateDetails = () => {
   const navigate = useNavigate();
@@ -7,7 +8,7 @@ const CandidateDetails = () => {
     navigate('/questions')
   }
   return (
-    <div>
+    <PageContent>
       <form>
         <div className='form-control'>
           <label>Name:</label>
@@ -23,7 +24,7 @@ const CandidateDetails = () => {
         </div>
            
       </form>
-    </div>
+    </PageContent>
   )
 }
 

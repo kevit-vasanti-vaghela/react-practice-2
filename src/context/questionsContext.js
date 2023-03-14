@@ -2,8 +2,8 @@ import React, { createContext, useState } from 'react'
 
 const QuestionsContext = createContext()
 
- 
 export function QuestionsProvider({ children }) {
+
   const [questions, setQuestions] = useState([ 
     {
     que_no: '1',
@@ -76,13 +76,12 @@ export function QuestionsProvider({ children }) {
       ]
     }])
    const [score, setScore] = useState(0);
-
+   const [currentQuestion, setCurrentQuestion] = useState(0);
    const calculateScore = (isCorrect) => {
         if(isCorrect) {
             setScore((prevState) => prevState + 1)
             console.log(score)
         }
-        // navigate(`/questions/${+id+1}`)
    }
 
    const resetScore = () => {

@@ -13,7 +13,7 @@ function App() {
   ])
   return (
     <QuestionsProvider>
-      <h1>MCQ Test</h1>
+      <h1 style={{textAlign: 'center'}}>MCQ Test</h1>
       <RouterProvider router={router} />
     </QuestionsProvider>
   );
